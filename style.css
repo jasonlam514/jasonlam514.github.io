@@ -1,7 +1,9 @@
 .nav1 {
     list-style-type: none;
-    margin: 0;
-    padding-bottom: 0;
+    margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 5px;
+    padding-bottom: 5px;
     overflow: hidden;
     background-color: #333;
     position: fixed;
@@ -13,7 +15,7 @@
 .bod {
     float: left;
     height: 3em;
-    margin-top: 3px;
+    margin-top: 2px;
     margin-left: 15px;
     border-color: white;
     border-width: 1px;
