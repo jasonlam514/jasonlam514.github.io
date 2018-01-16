@@ -13,6 +13,10 @@
       <script src="script.js"></script>
 	  <script>
 		$(document).ready(function() {
+		  var today = new Date();
+		  var date = new Date(1994,5,14,9,0,0);
+		  var age = ((today - date)/(1000*60*60*24*365));
+		  $('#results').html(Math.floor(age.toFixed(1)).toString());
 			$(".bod").click(function(){
 				$(".bod").fadeOut();
 				$(".bod").fadeIn();
@@ -45,7 +49,7 @@
                <div class="row">
                   <div class="col-lg-8 mx-auto">
                      <h2>About Me</h2>
-                     <p class="lead">My name is Jason.</p>
+                     <p class="lead">My name is Jason. I am <span id="results"></span> years old.</p>
                   </div>
                </div>
             </div>
