@@ -117,7 +117,9 @@ h2 {
   font-family: 'Jura', sans-serif;
   font-weight: bold;
 }
-
+p {
+  font-family: 'Jura', sans-serif;
+}
 .caption {
   position: relative;
   overflow: hidden;
