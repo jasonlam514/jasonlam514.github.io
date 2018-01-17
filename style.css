@@ -94,8 +94,24 @@ section {
   transform: rotate(45deg);
 } */
 
-section:nth-child(odd) {background-color: #19beff;}
-section:nth-child(even) {background-color: #FEC340;}
+/*section:nth-child(odd) {background-color: #19beff;}*/
+section:nth-child(odd) {
+  background-color: #19beff;
+  background-position: center bottom -1px;
+  background-image: url(copper-overlay.svg);
+  background-repeat: no-repeat;
+  background-size: 101vw;
+
+}
+
+section:nth-child(even) {
+  background-color: #FEC340;
+  background-position: center bottom;
+  background-image: url(giraffe.svg);
+  background-repeat: no-repeat;
+  background-size: 100vw;
+}
+
 section:nth-child(odd) .diamond {
   height: 150px;
   width: 150px;
