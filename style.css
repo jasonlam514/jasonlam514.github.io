@@ -58,6 +58,7 @@ ul#nav2 li a {
   max-height: 100%;
   max-width: 100%;
 }
+
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);  
@@ -101,7 +102,6 @@ section:nth-child(odd) {
   background-image: url(copper-overlay.svg);
   background-repeat: no-repeat;
   background-size: 101vw;
-
 }
 
 section:nth-child(even) {

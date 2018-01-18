@@ -17,10 +17,20 @@
 		  var today = new Date();
 		  var date = new Date(1994,5,14,9,0,0);
 		  var age = ((today - date)/(1000*60*60*24*365));
-		  $('#results').html(Math.floor(age.toFixed(1)).toString());
+		  $("#results").html(Math.floor(age.toFixed(1)).toString());
 			$(".bod").click(function(){
 				$(".bod").fadeOut();
 				$(".bod").fadeIn();
+			});
+			var bg = 1;
+			$("section:nth-child(even)").click(function(){
+				if(bg==1){
+					$(this).css("background-image", "url()");
+					bg = 0;
+				} else {
+					$(this).css("background-image", "url(giraffe.svg)");
+					bg = 1;
+				}
 			});
 		});
 	  </script>
