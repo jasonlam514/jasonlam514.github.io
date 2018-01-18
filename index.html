@@ -14,6 +14,7 @@
       <script src="script.js"></script>
 	  <script>
 		$(document).ready(function() {
+		  $("body").attr('data-offset',$("section").height()/1.2);
 		  var today = new Date();
 		  var date = new Date(1994,5,14,9,0,0);
 		  var age = ((today - date)/(1000*60*60*24*365));
@@ -34,14 +35,16 @@
 			});
 		});
 	  </script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
    </head>
-   <body>
-      <div class="nav1">
+   <body data-spy="scroll" data-target=".navbar-right">
+      <div class="navbar-right navbar-expand-sm navbar-dark bg-dark fixed-top nav1">
          <a><img class="bod" src="https://graph.facebook.com/1618956224/picture?type=square"></a>
-         <ul id="nav2">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#contact">Contact</a></li>
+         <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
          </ul>
       </div>
       <div class="sec">
@@ -68,19 +71,19 @@
 				  <div class="grid-item caption"><img class="caption__media" src="checker.png"></img>
 					<div class="caption__overlay">
 						<h3 class="caption__overlay__title">Bets checker</h3>
-						<p class="caption__overlay__content">Gather odds data from different bookies which guarantees you a profit. <a href="https://drive.google.com/open?id=1dwU-Um6cbANiWlm2IUbm_410xhu041DR">Link</a></p>
+						<p class="caption__overlay__content">Gather odds data from different bookies which guarantees you a profit. <a target="_blank" href="https://drive.google.com/open?id=1dwU-Um6cbANiWlm2IUbm_410xhu041DR">Link</a></p>
 					</div>
 				  </div>
 				  <div class="grid-item caption"><img class="caption__media" src="othello.png"></img>
 					<div class="caption__overlay">
 						<h3 class="caption__overlay__title">Boardgame</h3>
-						<p class="caption__overlay__content">3-in-1 board game (Othello, Connect4, TicTacToe2). <a href="https://drive.google.com/file/d/0B93u1Q8ZWEwdV2VhTGRhRFQ2U3M/view">Link</a></p>
+						<p class="caption__overlay__content">3-in-1 board game (Othello, Connect4, TicTacToe2). <a target="_blank" href="https://drive.google.com/file/d/0B93u1Q8ZWEwdV2VhTGRhRFQ2U3M/view">Link</a></p>
 					</div>
 				  </div>
 				  <div class="grid-item caption"><img class="caption__media" src="memo.jpeg"></img>
 				    <div class="caption__overlay">
 						<h3 class="caption__overlay__title">Memo App for android</h3>
-						<p class="caption__overlay__content">It allows users to add memos and schedule notifications. <a href="				  https://drive.google.com/file/d/0B93u1Q8ZWEwdaS1kUFNUWVJ2OFU/view
+						<p class="caption__overlay__content">It allows users to add memos and schedule notifications. <a target="_blank" href="				  https://drive.google.com/file/d/0B93u1Q8ZWEwdaS1kUFNUWVJ2OFU/view
 ">Link</a></p>
 					</div>
 				  </div>

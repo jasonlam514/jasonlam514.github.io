@@ -1,4 +1,8 @@
-.nav1 {
+body {
+    position: relative; 
+}
+  
+/*.nav1 {
     list-style-type: none;
     margin-top: 0px;
 	margin-bottom: 0px;
@@ -10,6 +14,10 @@
     top: 0;
     width: 100%;
     z-index: 999;
+}*/
+.nav1 {
+	padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .bod {
@@ -41,10 +49,26 @@ ul li a {
     text-decoration: none;
 }
 
-ul#nav2 li a {
+/*ul#nav2 li a {
     display: block;
     color: white;
     text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+.nav2 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}}*/
+
+.navbar-nav li a {
+	display: block;
+	text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
