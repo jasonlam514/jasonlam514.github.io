@@ -85,7 +85,7 @@ ul li a {
 .grid-container {
   display: grid;
   grid-gap: 15px;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 40% 30% 30%;
   height: 50vh;
   width: 100vw;
   max-height: 100%;
@@ -93,8 +93,9 @@ ul li a {
 }
 
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);  
+  /*background-color: rgba(255, 255, 255, 0.8);*/
+  /*border: 1px solid rgba(0, 0, 0, 0.8);  */
+  position: absolute;
   font-size: 30px;
   align-self: center;
   justify-self: center;
@@ -224,6 +225,24 @@ p {
 
 .caption__overlay__content {
   font-size: 18px;
+}
+
+iframe {
+    border: none;
+}
+
+#video-view{	
+    width: auto;
+    height: auto;
+    /*background-color: #FF69B4;*/
+    overflow:auto;
+	/*background-color = #FF69B4!important; */
+	padding-left: 20vw;
+	padding-top: 70px;
+	margin-top: 70px;
+	display:none;
+	position: relative;
+	bottom: 0;
 }
 /*footer {
 	background-color: #19beff;
