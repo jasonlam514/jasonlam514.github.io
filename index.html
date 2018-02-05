@@ -29,8 +29,12 @@
 			//$("#video-view").css({'height':'+=20px'});
 			var newHeight = $(window).height() + $('#video-view').height();
 			el.style.height = newHeight + 'px';
+			$("#video-view").css('padding-top',$(".navbar-right").height()+10);
 		}else{
 			$("html, body").animate({scrollTop: $("#about").offset().top});
+			$('#video-view h2').remove(); 
+			$('#video-view div').remove();
+			$('#video-view').css('padding-top','');			
 		}
 	  }
 	  </script>
@@ -63,7 +67,7 @@
 				//var $button = $("<button>").text("hide").attr("onclick","hide()");
 				$("#video-view").html($title).append($iframe);
 				$iframe.wrap("<div class='class-video'>");
-				$("#video-view").css({'background-color':'#FF69B4'});
+				//$("#video-view").css({'background-color':'#FF69B4'});
 				$("#video-view").slideToggle('slow',hide);
 			});
 		});
@@ -115,8 +119,9 @@
 				  <div class="grid-item caption"><img class="caption__media" src="othello.png"></img>
 					<div class="caption__overlay">
 						<h3 class="caption__overlay__title">Boardgame</h3>
-						<p class="caption__overlay__content"><a target="_blank" href="https://drive.google.com/file/d/0B93u1Q8ZWEwdV2VhTGRhRFQ2U3M/view">Link</a>
-						<a class="popup" data-link="LamAllFeatures.mp4" data-title="3-in-1 board game (Othello, Connect4, TicTacToe2)" href="#" onClick="return false;">Demo</a>
+						<p class="caption__overlay__content">
+						<a class="popup" data-link="LamAllFeatures.mp4" data-title="3-in-1 board game (Othello, Connect4, TicTacToe2)" href="#" onClick="return false;">Demo</a> |
+						<a target="_blank" href="https://drive.google.com/file/d/0B93u1Q8ZWEwdV2VhTGRhRFQ2U3M/view">Link</a>
 						</p>
 					</div>
 				  </div>

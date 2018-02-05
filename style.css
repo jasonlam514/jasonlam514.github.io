@@ -238,11 +238,18 @@ iframe {
     overflow:auto;
 	/*background-color = #FF69B4!important; */
 	padding-left: 20vw;
-	padding-top: 70px;
-	margin-top: 70px;
+	/*padding-top: 55px;*/
+	margin-bottom: 60px;
 	display:none;
 	position: relative;
 	bottom: 0;
+}
+
+#video-view h2{
+	margin: 0 auto;
+}
+#video-view iframe{
+	margin: 0 auto;
 }
 /*footer {
 	background-color: #19beff;
