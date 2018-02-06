@@ -126,9 +126,9 @@
 				<!--<li class="nav-item"><a class="nav-link" href="javascript:void(0);" onClick="hide('ho')">Home</a></li>
 				<li class="nav-item"><a class="nav-link" href="javascript:void(0);" onClick="hide('ab')">About Me</a></li>
 				<li class="nav-item"><a class="nav-link" href="javascript:void(0);" onClick="hide('co')">Contact</a></li>-->
-				<li class="nav-item"><a class="nav-link" id="ho" href="#home" onClick="return hide('ho')">Home</a></li>
-				<li class="nav-item"><a class="nav-link" id="ab" href="#about" onClick="return hide('ab')">About Me</a></li>
-				<li class="nav-item"><a class="nav-link" id="co" href="#contact" onClick="return hide('co')">Contact</a></li>
+				<li class="nav-item"><a class="nav-link" href="#home" onClick="return hide('ho')">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="#about" onClick="return hide('ab')">About Me</a></li>
+				<li class="nav-item"><a class="nav-link" href="#contact" onClick="return hide('co')">Contact</a></li>
 			</ul>
 		</div>
       </div>
@@ -211,7 +211,7 @@
          <li><a href="https://www.linkedin.com/in/jasonlam514/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
          <li><a href="https://github.com/jasonlam514" target="_blank"><i class="fa fa-github"></i></a></li>
          <li><a href="https://t.me/lamenk" target="_blank"><i class="fa fa-telegram"></i></a></li>
-         <li><a href="#home"><i class="fa fa-angle-up"></i></a></li>
+         <li><a href="#home" onClick="$.scrollify.move('#home'); return false;"><i class="fa fa-angle-up"></i></a></li>
       </ul>
       &copy; 2018 - Jason Lam
    </footer>
