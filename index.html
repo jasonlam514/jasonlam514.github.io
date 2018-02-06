@@ -75,6 +75,9 @@
 	  <script>
 		$(document).ready(function() {
 		  $("#video-view").css('padding-top',$(".navbar-right").height()+10);
+		  if(!(/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) )) {
+			$('section:nth-child(even)').css('background-attachment','');
+		  };
 		  //$("body").attr('data-offset',$("section").height()/0.7);
 		  //$("section").attr('data-offset',$("section").height()/0.7);
 		  var today = new Date();
