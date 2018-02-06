@@ -12,8 +12,9 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
       <script src="script.js"></script>
+	  <script src="jquery.scrollify.js"></script>
 	  <script>
-	  function hide() {
+	  function hide(bool) {
 	  	//$('#video-view').removeAttr('height');
 		//$("#video-view").css({'height':'-=20px'});
 		/*$('#video-view h2').remove(); 
@@ -21,26 +22,51 @@
 		$('#video-view button').remove(); 
 		$('#video-view').css({'background-color':''});*/
 		document.getElementById("about").style.height = $(window).height() + 'px';
-		if ($("#video-view").is(':visible')) {
-			$("html, body").animate({scrollTop: $("#video-view").offset().top});
-			var el = document.getElementById("about");
-			var height = el.offsetHeight;
-			//$('#video-view').height("+=20");
-			//$("#video-view").css({'height':'+=20px'});
-			var newHeight = $(window).height() + $('#video-view').height();
-			el.style.height = newHeight + 'px';
-			$("#video-view").css('padding-top',$(".navbar-right").height()+10);
+		if(bool!=false){
+			if ($("#video-view").is(':visible')) {
+				var el = document.getElementById("about");
+				var height = el.offsetHeight;
+				//$('#video-view').height("+=20");
+				//$("#video-view").css({'height':'+=20px'});
+				var newHeight = $(window).height() + $('#video-view').height();
+				el.style.height = newHeight + 'px';
+				$.scrollify.update();
+				$.scrollify.disable();
+				$.scrollify.enable();
+				$("html, body").animate({scrollTop: $("#video-view").offset().top},800);
+			}else{
+				$("html, body").animate({scrollTop: $("#about").offset().top},800);
+				$('#video-view').css('display','none');
+				$('#video-view h2').remove(); 
+				$('#video-view div').remove();
+				//$('#video-view').css('padding-top',$(".navbar-right").height()+10);	
+				if($.scrollify.isDisabled()){
+					$.scrollify.enable();	
+				}
+			}
 		}else{
-			$("html, body").animate({scrollTop: $("#about").offset().top});
+			//$('#video-view').css('padding-top',$(".navbar-right").height()+10);	
+			$('#video-view').css('display','none');
 			$('#video-view h2').remove(); 
 			$('#video-view div').remove();
-			$('#video-view').css('padding-top','');			
+			if($.scrollify.isDisabled()){
+				$.scrollify.enable();	
+			}
 		}
 	  }
 	  </script>
 	  <script>
+		$(function() {
+          $.scrollify({
+            section : "section",
+          });
+        });
+	  </script>
+	  <script>
 		$(document).ready(function() {
-		  $("body").attr('data-offset',$("section").height()/1.2);
+		  $("#video-view").css('padding-top',$(".navbar-right").height()+10);
+		  //$("body").attr('data-offset',$("section").height()/0.7);
+		  //$("section").attr('data-offset',$("section").height()/0.7);
 		  var today = new Date();
 		  var date = new Date(1994,5,14,9,0,0);
 		  var age = ((today - date)/(1000*60*60*24*365));
@@ -83,14 +109,14 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbar1">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="#home" onClick="hide(false)">Home</a></li>
 				<li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
-				<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+				<li class="nav-item"><a class="nav-link" href="#contact" onClick="hide(false)">Contact</a></li>
 			</ul>
 		</div>
       </div>
       <div class="sec">
-         <section id="home">
+         <section id="home" data-section-name="home">
             <div class="container">
 			<div class="diamond"></div>
                <div class="row">
@@ -101,7 +127,7 @@
                </div>
             </div>
          </section>
-         <section id="about">
+         <section id="about" data-section-name="about">
             <div class="container">
                <div class="row">
                   <div class="col-lg-8 mx-auto">
@@ -143,7 +169,7 @@
             </div>
 			<div id="video-view"></div>
          </section>
-         <section id="contact">
+         <section id="contact" data-section-name="contact">
             <div class="container">
                <div class="row">
                   <div class="col-lg-8 mx-auto">
