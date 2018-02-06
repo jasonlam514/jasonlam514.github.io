@@ -11,18 +11,14 @@
       <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet" />
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
-      <script src="script.js"></script>
+      <!--<script src="script.js"></script>-->
 	  <script src="jquery.scrollify.js"></script>
 	  <script>
 	  function hide(bool) {
-	  	//$('#video-view').removeAttr('height');
-		//$("#video-view").css({'height':'-=20px'});
-		/*$('#video-view h2').remove(); 
-		$('#video-view div').remove(); 
-		$('#video-view button').remove(); 
-		$('#video-view').css({'background-color':''});*/
-		document.getElementById("about").style.height = $(window).height() + 'px';
-		if(bool!=false){
+		if(bool!=='ab'){
+			$('#about').css('height','100vh');
+		}
+		if(bool==undefined){
 			if ($("#video-view").is(':visible')) {
 				var el = document.getElementById("about");
 				var height = el.offsetHeight;
@@ -45,25 +41,36 @@
 				}
 			}
 		}else{
-			//$('#video-view').css('padding-top',$(".navbar-right").height()+10);	
-			$('#video-view').css('display','none');
-			$('#video-view h2').remove(); 
-			$('#video-view div').remove();
-			$('#about').css('height','100vh');
-			$.scrollify.update();
-			//document.getElementById("about").style.height = $(window).height() + 'px';
-			if($.scrollify.isDisabled()){
-				$.scrollify.enable();	
+			if(bool=='ho'||bool=='co'){
+				//$('#video-view').css('padding-top',$(".navbar-right").height()+10);	
+				$('#video-view').css('display','none');
+				$('#video-view h2').remove(); 
+				$('#video-view div').remove();
+				//$.scrollify.update();
+				//document.getElementById("about").style.height = $(window).height() + 'px';
+				if($.scrollify.isDisabled()){
+					$.scrollify.enable();	
+				}
+				if(bool=='ho'){
+					$.scrollify.move("#home");
+				}else{
+					$.scrollify.move("#contact");
+				}
+			}else{
+				$.scrollify.move("#about");
 			}
 		}
+		return false;
 	  }
 	  </script>
 	  <script>
+	  //if(!(/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) )) {
 		$(function() {
           $.scrollify({
             section : "section",
           });
         });
+	  //}
 	  </script>
 	  <script>
 		$(document).ready(function() {
@@ -112,9 +119,12 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbar1">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item"><a class="nav-link" href="#home" onClick="hide(false)">Home</a></li>
-				<li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
-				<li class="nav-item"><a class="nav-link" href="#contact" onClick="hide(false)">Contact</a></li>
+				<!--<li class="nav-item"><a class="nav-link" href="javascript:void(0);" onClick="hide('ho')">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="javascript:void(0);" onClick="hide('ab')">About Me</a></li>
+				<li class="nav-item"><a class="nav-link" href="javascript:void(0);" onClick="hide('co')">Contact</a></li>-->
+				<li class="nav-item"><a class="nav-link" id="ho" href="#home" onClick="return hide('ho')">Home</a></li>
+				<li class="nav-item"><a class="nav-link" id="ab" href="#about" onClick="return hide('ab')">About Me</a></li>
+				<li class="nav-item"><a class="nav-link" id="co" href="#contact" onClick="return hide('co')">Contact</a></li>
 			</ul>
 		</div>
       </div>

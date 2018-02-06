@@ -21,6 +21,10 @@ button.navbar-toggler {
 	margin-right: 5px;
 }
 
+.nav-link:hover{
+	color:white!important;
+}
+
 #navbar1 {
 	float: right;
 }
@@ -140,6 +144,7 @@ section:nth-child(odd) {
 
 section:nth-child(even) {
   background-color: #FEC340;
+  background-attachment: fixed;
   background-position: center bottom;
   background-image: url(giraffe.svg);
   background-repeat: no-repeat;
@@ -149,6 +154,7 @@ section:nth-child(even) {
 section:nth-child(odd) .diamond {
   height: 150px;
   width: 150px;
+  background-attachment: fixed;
   background-color: #7FDBFF;
   transform: rotate(45deg);
 } 
