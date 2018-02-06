@@ -243,21 +243,23 @@ iframe {
     height: auto;
     /*background-color: #FF69B4;*/
     overflow:auto;
-	/*background-color = #FF69B4!important; */
+	/*background-color = #FF69B4!important; 
 	padding-left: 20vw;
-	/*padding-top: 55px;*/
-	margin-bottom: 60px;
+	padding-top: 55px;
+	margin-bottom: 60px;*/
 	display:none;
 	position: relative;
 	bottom: 0;
 }
 
 #video-view h2{
-	margin: 0 auto;
+	margin: auto;
+	text-align: center;
 }
 #video-view iframe{
-	margin: 0 auto;
+	margin: auto;
 	max-height: 100%;
+	display: block;
 	/*position: absolute;
     top:0;
     left: 0;

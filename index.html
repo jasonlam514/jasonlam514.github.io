@@ -24,11 +24,11 @@
 				var height = el.offsetHeight;
 				//$('#video-view').height("+=20");
 				//$("#video-view").css({'height':'+=20px'});
-				var newHeight = $(window).height() + $('#video-view').height();
+				var newHeight = $(window).height() + $('#video-view').outerHeight();
 				el.style.height = newHeight + 'px';
-				$.scrollify.update();
 				$.scrollify.disable();
 				$.scrollify.enable();
+				$.scrollify.update();
 				$("html, body").animate({scrollTop: $("#video-view").offset().top},800);
 			}else{
 				$("html, body").animate({scrollTop: $("#about").offset().top},800);
