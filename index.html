@@ -49,6 +49,9 @@
 			$('#video-view').css('display','none');
 			$('#video-view h2').remove(); 
 			$('#video-view div').remove();
+			$('#about').css('height','100vh');
+			$.scrollify.update();
+			//document.getElementById("about").style.height = $(window).height() + 'px';
 			if($.scrollify.isDisabled()){
 				$.scrollify.enable();	
 			}
