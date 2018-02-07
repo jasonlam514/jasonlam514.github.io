@@ -15,17 +15,19 @@
 	  <script src="jquery.scrollify.js"></script>
 	  <script>
 	  function hide(bool) {
-		if(bool!=='ab'){
+		$.scrollify.update();
+		if(bool!=='ab'&&bool!==undefined){
 			$('#about').css('height','100vh');
 		}
 		if(bool==undefined){
 			if ($("#video-view").is(':visible')) {
-				var el = document.getElementById("about");
-				var height = el.offsetHeight;
+				//var el = document.getElementById("about");
+				//var height = el.offsetHeight;
 				//$('#video-view').height("+=20");
 				//$("#video-view").css({'height':'+=20px'});
 				var newHeight = $(window).height() + $('#video-view').outerHeight();
-				el.style.height = newHeight + 'px';
+				//el.style.height = newHeight + 'px';
+				$('#about').css('height',newHeight + 'px');
 				$.scrollify.disable();
 				$.scrollify.enable();
 				$.scrollify.update();
@@ -35,6 +37,8 @@
 				$('#video-view').css('display','none');
 				$('#video-view h2').remove(); 
 				$('#video-view div').remove();
+				$('#about').css('height','100vh');
+				$.scrollify.update();
 				//$('#video-view').css('padding-top',$(".navbar-right").height()+10);	
 				if($.scrollify.isDisabled()){
 					$.scrollify.enable();	
