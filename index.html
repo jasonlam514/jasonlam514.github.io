@@ -35,7 +35,7 @@
 				//$.scrollify.enable();
 				$.scrollify.update();
 				if((/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) )) {
-					$.scrollify.disabled();
+					$.scrollify.disable();
 				}
 				//$("html, body").animate({scrollTop: $("#video-view").offset().top},800);
 				$("html, body").animate({ scrollTop: $("#contact").offset().top-$(window).height()}, 800);
