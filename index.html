@@ -25,14 +25,14 @@
 				//var height = el.offsetHeight;
 				//$('#video-view').height("+=20");
 				//$("#video-view").css({'height':'+=20px'});
-				var newHeight = $(window).height() + $('#video-view').outerHeight();
+				var newHeight = $(window).height() + $('#video-view').outerHeight() + $('.pad').outerHeight();
 				//el.style.height = newHeight + 'px';
 				$('#about').css('height',newHeight + 'px');
 				//$.scrollify.disable();
 				//$.scrollify.enable();
 				$.scrollify.update();
 				//$("html, body").animate({scrollTop: $("#video-view").offset().top},800);
-				$("html, body").animate({ scrollTop: $("#video-view").offset().top-$("iframe").height()}, 800);
+				$("html, body").animate({ scrollTop: $("#video-view").offset().top-$("iframe").outerHeight()}, 800);
 			}else{
 				$("html, body").animate({scrollTop: $("#about").offset().top},800);
 				$('#video-view').css('display','none');
