@@ -249,7 +249,7 @@ iframe {
 	margin-bottom: 60px;*/
 	display:none;
 	position: relative;
-	bottom: 0;
+	/*bottom: 0;*/
 }
 
 #video-view h2{
