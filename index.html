@@ -15,6 +15,9 @@
 	  <script src="jquery.scrollify.js"></script>
 	  <script>
 	  function hide(bool) {
+		if($.scrollify.isDisabled()){
+			$.scrollify.enable();	
+		}
 		$.scrollify.update();
 		if(bool!=='ab'&&bool!==undefined){
 			$('#about').css('height','100vh');
@@ -31,6 +34,9 @@
 				//$.scrollify.disable();
 				//$.scrollify.enable();
 				$.scrollify.update();
+				if((/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) )) {
+					$.scrollify.disabled();
+				}
 				//$("html, body").animate({scrollTop: $("#video-view").offset().top},800);
 				$("html, body").animate({ scrollTop: $("#contact").offset().top-$(window).height()}, 800);
 			}else{
@@ -61,7 +67,7 @@
 				}else{
 					$.scrollify.move("#contact");
 				}
-			}else{
+			}else if(bool=='ab'){
 				$.scrollify.move("#about");
 			}
 		}
@@ -218,7 +224,7 @@
          <li><a href="https://www.linkedin.com/in/jasonlam514/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
          <li><a href="https://github.com/jasonlam514" target="_blank"><i class="fa fa-github"></i></a></li>
          <li><a href="https://t.me/lamenk" target="_blank"><i class="fa fa-telegram"></i></a></li>
-         <li><a href="#home" onClick="$.scrollify.move('#home'); return false;"><i class="fa fa-angle-up"></i></a></li>
+         <li><a href="#home" onClick="return hide('ho')"><i class="fa fa-angle-up"></i></a></li>
       </ul>
       &copy; 2018 - Jason Lam
    </footer>
