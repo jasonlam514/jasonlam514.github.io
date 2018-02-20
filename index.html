@@ -31,10 +31,15 @@
               $('.navbar-toggler').trigger( "click" );
             }
           });
-		  /*if($('.navbar-toggler').attr('aria-expanded')=='true'){
-			$(".navbar-nav li a").css({'padding':'0px 0px' });
+		  /*if($('.navbar-toggler').is(':visible')==true && $('.navbar-collapse').is(':visible')==false){
+			$('li a:not(:active)').css('background-color','transparent');
 		  } else {
-			$(".navbar-nav li a").css({'padding':'14px 16px'});
+			$('li a:not(:active)').css('background-color', 'rgba(255,255,255,0.3)');
+		  }*/
+		  /*if($('.navbar-toggler').is(':visible')==false && $('.navbar-collapse').is(':visible')==true){
+			$('li a').css('background-color', 'rgba(255,255,255,0.3)');
+		  } else {
+			$('li a:not(:active)').css('background-color','transparent');
 		  }*/
         });
 		});

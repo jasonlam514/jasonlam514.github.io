@@ -123,6 +123,10 @@ li a:hover {
     color: white;
 }
 
+li a:not(:active) {
+	background-color: transparent;
+}
+
 section {
   padding: 150px 0;
   height: 100vh;
