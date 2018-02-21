@@ -45,7 +45,7 @@ button.navbar-toggler {
 	box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.5);
   }
 
-ul {
+#navbar1 ul {
   list-style-type: none;
   float: right;
   /*margin-bottom: 0px;*/
@@ -88,9 +88,6 @@ ul li a {
     text-decoration: none;
 }
 
-.navbar-collapse { 
-	
-}
 .grid-container {
   display: grid;
   grid-gap: 10px;
@@ -128,6 +125,21 @@ ul li a {
 	background-color: rgba(255,255,255,0.3);
 	border-radius: 10%;
     color: white;
+}
+
+footer ul {
+	list-style-type: none;
+	float: right;
+	max-height: 30px;
+}
+
+footer ul li a {
+	padding: 10px 15px 10px 15px;
+}
+
+footer ul li a:hover {
+	background-color: rgba(0,0,0,1);
+	color: white;
 }
 
 section {
@@ -210,10 +222,10 @@ section {
 /*section:nth-child(odd) {background-color: #19beff;}*/
 section:nth-child(odd) {
   background-color: #19beff;
-  background-position: center bottom ;/*bottom -1px*/
+  background-position: center bottom -1px;/*bottom -1px*/
   background-image: url(../img/copper-overlay.svg);
   background-repeat: no-repeat;
-  background-size: 100vw;/*101vw*/
+  background-size: 101vw;/*101vw*/
 }
 
 section:nth-child(even) {
