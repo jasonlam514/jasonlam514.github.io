@@ -78,11 +78,10 @@
   <script>
     //var mobile = (/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent));
     $(document).ready(function() {
-	alert('max-h:'+$('.grid-container').css('max-height'));
-	  alert('h:'+$('.grid-container').css('height'));
-	  alert('item-max-h:'+$('.grid-item').css('max-height'));
-	  alert('item-h:'+$('.grid-item').css('height'));
       mobile();
+	  alert('h:'+$('.grid-container').css('height'));
+	  alert('item-h:'+$('.grid-item').css('height'));
+	  alert('pic-h:'+$('.grid-item img').css('height'));
 	  $(document).on("click", '.grid-item', function(){
 	  var x = $('.grid-container').scrollLeft();
 	  //$('.grid-container').scrollLeft(x+$(this).position().left-$('.grid-container').offset().left);
@@ -94,12 +93,11 @@
     /*$(window).resize(function() {
       mobile();
     });*/
-	$(window).on("orientationchange resize", function(event) {
-	  alert('max-h:'+$('.grid-container').css('max-height'));
-	  alert('h:'+$('.grid-container').css('height'));
-	  alert('item-max-h:'+$('.grid-item').css('max-height'));
-	  alert('item-h:'+$('.grid-item').css('height'));
+	$(window).on("resize", function(event) {
 	  mobile();
+	  alert('h:'+$('.grid-container').css('height'));
+	  alert('item-h:'+$('.grid-item').css('height'));
+	  	  alert('pic-h:'+$('.grid-item img').css('height'));
 	});
 	function mobile() {
 	  if ($('.navbar-toggler').is(':visible') == true) {
