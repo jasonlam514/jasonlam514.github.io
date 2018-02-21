@@ -32,9 +32,9 @@
           $('.navbar-toggler').trigger("click");
         }
       });
-	  $('html').click(function(e) {
+	  $(document).on("click touchstart", 'html', function(e) {
         if (mobile && !($(e.target).hasClass('nav-link')) && !($(e.target).hasClass('navbar-toggler')) && $('.navbar-toggler').attr('aria-expanded') == 'true') {
-			alert('clicked');
+		  alert(e.target);
           $('.navbar-toggler').trigger("click");
 		  $('.navbar-toggler').trigger('touchstart');
         }
