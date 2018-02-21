@@ -181,6 +181,7 @@ section {
    -moz-transition: transform .35s ease-in-out;
    -o-transition: transform .35s ease-in-out;
    transition: transform .35s ease-in-out;
+   
 }
 
 .navbar-toggler:not(.collapsed) span:nth-child(1) {
@@ -211,6 +212,7 @@ section {
     -o-transform: rotate(-135deg);
     transform: rotate(-135deg);
     opacity: 0.8;
+	margin-bottom: -4px;
 }
 
 /*section:nth-child(even) .diamond {

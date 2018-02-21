@@ -1,165 +1,202 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <title>Jason Lam's page</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="shortcut icon" type="image/png" href="img/icon.png" />
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css" rel="stylesheet" />
-      <link href="css/style.css" rel="stylesheet" />
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
-      <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet" />
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
-      <!--<script src="script.js"></script>-->
-	  <script src="js/jquery.scrollify.js"></script>
-	  <script src="js/vid.js"></script>
-	  <script>
-	  //if(!(/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) )) {
-		$(function() {
-          $.scrollify({
-            section : "section",
-          });
-        });
-	  //}
-	  </script>
-	  <script>
-	    $('html').click(function(e){ 
-          if(!($(e.target).hasClass('nav-link'))&&!($(e.target).hasClass('navbar-toggler'))&&$('.navbar-toggler').attr('aria-expanded')=='true'){
-            $('.navbar-toggler').trigger( "click" );
-          }
-        });
-	  </script>
-	  <script>
-		$(document).ready(function(){
-		  if($('.navbar-toggler').is(':visible')==true){
-		    $('#navbar1').removeClass('desktop').addClass('mobile');
-		  } else {
-		  	$('#navbar1').removeClass('mobile').addClass('desktop');
-		  }
-		});
-	  </script>
-	  <script>
-		$(window).resize(function () {
-		  if($('.navbar-toggler').is(':visible')==true){
-		    $('#navbar1').removeClass('desktop').addClass('mobile');
-		  } else {
-		  	$('#navbar1').removeClass('mobile').addClass('desktop');
-		  }
-		});
-	  </script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-	  <!-- Global site tag (gtag.js) - Google Analytics -->
-	  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114528684-1"></script>
-	  <script>
-	    window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'UA-114528684-1');
-	  </script>
 
-   </head>
-   <body data-spy="scroll" data-target=".navbar-right">
-      <div class="navbar-right navbar-dark navbar-expand-sm fixed-top nav1">
-         <a><img class="bod animated slideInLeft" src="https://graph.facebook.com/1618956224/picture?type=square"></a>
-		 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar1">
+<head>
+  <title>Jason Lam's page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="img/icon.png" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+  <!--<script src="script.js"></script>-->
+  <script src="js/jquery.scrollify.js"></script>
+  <script src="js/vid.js"></script>
+  <script>
+    //if(!(/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) )) {
+    $(function() {
+      $.scrollify({
+        section: "section",
+      });
+    });
+    //}
+  </script>
+  <script>
+    $(document).ready(function() {
+      var mobile = (/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent));
+      $('html').click(function(e) {
+        if (!mobile && !($(e.target).hasClass('nav-link')) && !($(e.target).hasClass('navbar-toggler')) && $('.navbar-toggler').attr('aria-expanded') == 'true') {
+          $('.navbar-toggler').trigger("click");
+        }
+      });
+	  $('html').click(function(e) {
+        if (mobile && !($(e.target).hasClass('nav-link')) && !($(e.target).hasClass('navbar-toggler')) && $('.navbar-toggler').attr('aria-expanded') == 'true') {
+			alert('clicked');
+          $('.navbar-toggler').trigger("click");
+		  $('.navbar-toggler').trigger('touchstart');
+        }
+      });
+      /*$('section').click(function() {
+        if (mobile && $('.navbar-toggler').attr('aria-expanded') == 'true') {
+          $('.navbar-toggler').trigger("click");
+        }
+      });*/
+      var dark = 1;
+      $(".bod").click(function() {
+        //$(".bod").fadeOut();
+        //$(".bod").fadeIn();
+        if (dark == 1) {
+          $(".bod").animate({
+            opacity: 0.5
+          }, 1000);
+          dark = 0;
+        } else {
+          $(".bod").animate({
+            opacity: 1
+          }, 1000);
+          dark = 1;
+        }
+      });
+    });
+  </script>
+  <script>
+  </script>
+  <script>
+    $(document).ready(function() {
+      if ($('.navbar-toggler').is(':visible') == true) {
+        $('#navbar1').removeClass('desktop').addClass('mobile');
+      } else {
+        $('#navbar1').removeClass('mobile').addClass('desktop');
+      }
+    });
+    $(window).resize(function() {
+      if ($('.navbar-toggler').is(':visible') == true) {
+        $('#navbar1').removeClass('desktop').addClass('mobile');
+      } else {
+        $('#navbar1').removeClass('mobile').addClass('desktop');
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114528684-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-114528684-1');
+  </script>
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar-right">
+  <div class="navbar-right navbar-dark navbar-expand-sm fixed-top nav1">
+    <a><img class="bod animated slideInLeft" src="https://graph.facebook.com/1618956224/picture?type=square"></a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar1">
 			<span> </span>
             <span> </span>
             <span> </span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbar1">
-			<ul class="navbar-nav mr-auto">
-				<!--<li class="nav-item"><a class="nav-link" href="javascript:void(0);" onClick="hide('ho')">Home</a></li>
+    <div class="collapse navbar-collapse" id="navbar1">
+      <ul class="navbar-nav mr-auto">
+        <!--<li class="nav-item"><a class="nav-link" href="javascript:void(0);" onClick="hide('ho')">Home</a></li>
 				<li class="nav-item"><a class="nav-link" href="javascript:void(0);" onClick="hide('ab')">About Me</a></li>
 				<li class="nav-item"><a class="nav-link" href="javascript:void(0);" onClick="hide('co')">Contact</a></li>-->
-				<li class="nav-item"><a class="nav-link" href="#home" onClick="return hide('ho')">Home</a></li>
-				<li class="nav-item"><a class="nav-link" href="#about" onClick="return hide('ab')">About Me</a></li>
-				<li class="nav-item"><a class="nav-link" href="#contact" onClick="return hide('co')">Contact</a></li>
-			</ul>
-		</div>
+        <li class="nav-item"><a class="nav-link" href="#home" onClick="return hide('ho')">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about" onClick="return hide('ab')">About Me</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact" onClick="return hide('co')">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="sec">
+    <section id="home" data-section-name="home">
+      <div class="container">
+        <div class="diamond"></div>
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Jason's Homepage</h2>
+            <p class="lead">Welcome to my homepage! Here you can find the personal information about me. <i class="fa fa-smile-o"></i> </p>
+          </div>
+        </div>
       </div>
-      <div class="sec">
-         <section id="home" data-section-name="home">
-            <div class="container">
-			<div class="diamond"></div>
-               <div class="row">
-                  <div class="col-lg-8 mx-auto">
-                     <h2>Jason's Homepage</h2>
-                     <p class="lead">Welcome to my homepage! Here you can find the personal information about me. <i class="fa fa-smile-o"></i> </p>
-                  </div>
-               </div>
+    </section>
+    <section id="about" data-section-name="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>About Me</h2>
+            <p class="lead">I am Jason, a computer science student from Hong Kong. Some of my previous projects are listed below:</p>
+          </div>
+        </div>
+        <div class="grid-container">
+          <div class="grid-item caption"><img class="caption__media" src="img/checker.png"></img>
+            <div class="caption__overlay">
+              <h3 class="caption__overlay__title">Bets checker</h3>
+              <p class="caption__overlay__content">Gathering odds data from different bookies which guarantees you a profit. <a target="_blank" href="https://drive.google.com/open?id=1dwU-Um6cbANiWlm2IUbm_410xhu041DR">Link</a></p>
             </div>
-         </section>
-         <section id="about" data-section-name="about">
-            <div class="container">
-               <div class="row">
-                  <div class="col-lg-8 mx-auto">
-                     <h2>About Me</h2>
-                     <p class="lead">I am Jason, a computer science student from Hong Kong. Some of my previous projects are listed below:</p> 
-                  </div>
-               </div>
-			   <div class="grid-container">
-				  <div class="grid-item caption"><img class="caption__media" src="img/checker.png"></img>
-					<div class="caption__overlay">
-						<h3 class="caption__overlay__title">Bets checker</h3>
-						<p class="caption__overlay__content">Gathering odds data from different bookies which guarantees you a profit. <a target="_blank" href="https://drive.google.com/open?id=1dwU-Um6cbANiWlm2IUbm_410xhu041DR">Link</a></p>
-					</div>
-				  </div>
-				  <div class="grid-item caption"><img class="caption__media" src="img/othello.png"></img>
-					<div class="caption__overlay">
-						<h3 class="caption__overlay__title">Boardgame</h3>
-						<p class="caption__overlay__content">
-						<a class="popup" data-link="vid/LamAllFeatures.mp4" data-title="3-in-1 board game (Othello, Connect4, TicTacToe2)" href="#" onClick="return false;">Demo</a> |
-						<a target="_blank" href="https://drive.google.com/file/d/0B93u1Q8ZWEwdV2VhTGRhRFQ2U3M/view">Link</a>
-						</p>
-					</div>
-				  </div>
-				  <div class="grid-item caption"><img class="caption__media" src="img/memo.jpeg"></img>
-				    <div class="caption__overlay">
-						<h3 class="caption__overlay__title">Memo App for android</h3>
-						<p class="caption__overlay__content">It allows users to add memos and schedule notifications. <a target="_blank" href="				  https://drive.google.com/file/d/0B93u1Q8ZWEwdaS1kUFNUWVJ2OFU/view
+          </div>
+          <div class="grid-item caption"><img class="caption__media" src="img/othello.png"></img>
+            <div class="caption__overlay">
+              <h3 class="caption__overlay__title">Boardgame</h3>
+              <p class="caption__overlay__content">
+                <a class="popup" data-link="vid/LamAllFeatures.mp4" data-title="3-in-1 board game (Othello, Connect4, TicTacToe2)" href="#" onClick="return false;">Demo</a> |
+                <a target="_blank" href="https://drive.google.com/file/d/0B93u1Q8ZWEwdV2VhTGRhRFQ2U3M/view">Link</a>
+              </p>
+            </div>
+          </div>
+          <div class="grid-item caption"><img class="caption__media" src="img/memo.jpeg"></img>
+            <div class="caption__overlay">
+              <h3 class="caption__overlay__title">Memo App for android</h3>
+              <p class="caption__overlay__content">It allows users to add memos and schedule notifications. <a target="_blank" href="				  https://drive.google.com/file/d/0B93u1Q8ZWEwdaS1kUFNUWVJ2OFU/view
 ">Link</a></p>
-					</div>
-				  </div>
-				  <!--<div class="grid-item"><img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/104.png"</img></div>
+            </div>
+          </div>
+          <!--<div class="grid-item"><img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/104.png"</img></div>
 				  <div class="grid-item"><img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/105.png"</img></div>
 				  <div class="grid-item"><img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/106.png"</img></div>
 				  </div>
 			<div data-role="popup" id="popupVideo" data-overlay-theme="b" data-theme="a" data-tolerance="15,15" class="ui-content">
 			<iframe src="LamAllFeatures.mp4" width="497" height="298" seamless=""></iframe>
 			</div>-->
-			   </div>
-            </div>
-			<div id="video-view"></div>
-         </section>
-         <section id="contact" data-section-name="contact">
-            <div class="container">
-               <div class="row">
-                  <div class="col-lg-8 mx-auto">
-                     <h2>
-                     Contact
-                     <h2>
-                     <p class="lead">
-                       <div class="row">
-                          <div class="col-sm-2"><i class="fa fa-envelope"></i></div>
-                          <div class="col-sm-10"><a href="mailto:jasonlam514@hotmail.com" style="font-size:18px">jasonlam514@hotmail.com</a></div>
-                       </div>
-					 </p>
-                  </div>
-               </div>
-            </div>
-         </section>
+        </div>
       </div>
-   </body>
-   <footer>
-      <ul>
-         <!--<li><a href="https://www.facebook.com/jason.lam.184" target="_blank"><i class="fa fa-facebook"></i></a></li>-->
-         <li><a href="https://www.linkedin.com/in/jasonlam514/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-         <li><a href="https://github.com/jasonlam514" target="_blank"><i class="fa fa-github"></i></a></li>
-         <li><a href="https://t.me/lamenk" target="_blank"><i class="fa fa-telegram"></i></a></li>
-         <li><a href="#home" onClick="return hide('ho')"><i class="fa fa-angle-up"></i></a></li>
-      </ul>
-      &copy; 2018 - Jason Lam
-   </footer>
+      <div id="video-view"></div>
+    </section>
+    <section id="contact" data-section-name="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>
+              Contact
+              <h2>
+                <p class="lead">
+                  <div class="row">
+                    <div class="col-sm-2"><i class="fa fa-envelope"></i></div>
+                    <div class="col-sm-10"><a href="mailto:jasonlam514@hotmail.com" style="font-size:18px">jasonlam514@hotmail.com</a></div>
+                  </div>
+                </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+<footer>
+  <ul>
+    <!--<li><a href="https://www.facebook.com/jason.lam.184" target="_blank"><i class="fa fa-facebook"></i></a></li>-->
+    <li><a href="https://www.linkedin.com/in/jasonlam514/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+    <li><a href="https://github.com/jasonlam514" target="_blank"><i class="fa fa-github"></i></a></li>
+    <li><a href="https://t.me/lamenk" target="_blank"><i class="fa fa-telegram"></i></a></li>
+    <li><a href="#home" onClick="return hide('ho')"><i class="fa fa-angle-up"></i></a></li>
+  </ul>
+  &copy; 2018 - Jason Lam
+</footer>
+
 </html>
