@@ -145,7 +145,8 @@ footer ul li a:hover {
 }
 
 section {
-  padding: 150px 0;
+  /*padding: 150px 0;*/
+  padding-top: 15vh;
   height: 100vh;
   max-height: 100%;
   width: 100vw;
@@ -229,6 +230,7 @@ section:nth-child(odd) {
   background-image: url(../img/copper-overlay.svg);
   background-repeat: no-repeat;
   background-size: 101vw;/*101vw*/
+  
 }
 
 section:nth-child(even) {
