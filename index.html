@@ -78,6 +78,10 @@
   <script>
     //var mobile = (/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent));
     $(document).ready(function() {
+	alert('max-h:'+$('.grid-container').css('max-height'));
+	  alert('h:'+$('.grid-container').css('height'));
+	  alert('item-max-h:'+$('.grid-item').css('max-height'));
+	  alert('item-h:'+$('.grid-item').css('height'));
       mobile();
 	  $(document).on("click", '.grid-item', function(){
 	  var x = $('.grid-container').scrollLeft();
@@ -91,15 +95,19 @@
       mobile();
     });*/
 	$(window).on("orientationchange resize", function(event) {
+	  alert('max-h:'+$('.grid-container').css('max-height'));
+	  alert('h:'+$('.grid-container').css('height'));
+	  alert('item-max-h:'+$('.grid-item').css('max-height'));
+	  alert('item-h:'+$('.grid-item').css('height'));
 	  mobile();
 	});
 	function mobile() {
 	  if ($('.navbar-toggler').is(':visible') == true) {
         $('#navbar1').removeClass('desktop').addClass('mobile');
-		$('.grid-container').css({'grid-template-columns':'100% 100% 100%','overflow':'auto','height': $(window).height()/2});
+		$('.grid-container').css({'grid-template-columns':'100% 100% 100%','overflow':'auto'});
       } else {
         $('#navbar1').removeClass('mobile').addClass('desktop');
-		$('.grid-container').css({'grid-template-columns':'40% 30% 30%','overflow':'visible','height': $(window).height()/2});
+		$('.grid-container').css({'grid-template-columns':'40% 30% 30%','overflow':'visible'});
       }
 	}
   </script>
