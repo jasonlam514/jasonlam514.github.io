@@ -106,12 +106,14 @@ ul li a {
   position: relative;
   font-size: 30px;
   align-self: center;
+  height: auto;
   justify-self: center;
   max-height: 100%;
   max-width: 100%;
 }
 
 .grid-item img{
+  height: auto;
   max-height: 100%;
   max-width: 100%;
 }
