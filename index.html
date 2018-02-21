@@ -36,6 +36,7 @@
   <script>
     $(document).ready(function() {
       var mobile = (/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent));
+	  $('.bod').addClass('animated slideInLeft');
       $('html').click(function(e) {
         if (!mobile && !($(e.target).hasClass('nav-link')) && !($(e.target).hasClass('navbar-toggler')) && $('.navbar-toggler').attr('aria-expanded') == 'true') {
           $('.navbar-toggler').trigger("click");
@@ -101,19 +102,6 @@
     gtag('js', new Date());
     gtag('config', 'UA-114528684-1');
   </script>
-  <script>
-  function refreshPage() {
-  $.mobile.changePage(
-    window.location.href,
-    {
-      allowSamePageTransition : true,
-      transition              : 'none',
-      showLoadMsg             : false,
-      reloadPage              : true
-    }
-  );
-}
-</script>
   
 </head>
 
