@@ -24,18 +24,19 @@
 	  //}
 	  </script>
 	  <script>
-		$(document).ready(function(){$(function() {
-		  $('section').on('click', function(){ 
-            if($('.navbar-toggler').attr('aria-expanded')=='true'){
-              $('.navbar-toggler').trigger( "click" );
-            }
-          });
-		  if($('.navbar-toggler').is(':visible')==true && $('.navbar-collapse').is(':visible')==false){
+	    $('html').click(function(e){ 
+          if(!($(e.target).hasClass('nav-link'))&&!($(e.target).hasClass('navbar-toggler'))&&$('.navbar-toggler').attr('aria-expanded')=='true'){
+            $('.navbar-toggler').trigger( "click" );
+          }
+        });
+	  </script>
+	  <script>
+		$(document).ready(function(){
+		  if($('.navbar-toggler').is(':visible')==true){
 		    $('#navbar1').removeClass('desktop').addClass('mobile');
 		  } else {
 		  	$('#navbar1').removeClass('mobile').addClass('desktop');
 		  }
-        });
 		});
 	  </script>
 	  <script>

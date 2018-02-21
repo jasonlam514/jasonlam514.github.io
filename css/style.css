@@ -18,7 +18,7 @@ body {
 button.navbar-toggler {
 	float: right;
 	margin-top: 5px;
-	margin-right: 5px;
+	margin-right: 8px;
 }
 
 .nav-link:hover{
@@ -30,13 +30,14 @@ button.navbar-toggler {
 }
 
 .nav1 {
-	padding: 2px 5px 2px 0;
+	padding: 12px 5px 2px 0;
 }
 
 .bod {
     float: left;
     height: 3em;
-    margin-bottom: 3px;
+	/*margin-top: 15px; */
+    /*margin-bottom: 3px;*/
     margin-left: 20px;
     border-color: white;
     border-width: 0px;

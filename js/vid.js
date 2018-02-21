@@ -9,10 +9,18 @@ $(document).ready(function() {
 		  var today = new Date();
 		  var date = new Date(1994,5,14,9,0,0);
 		  var age = ((today - date)/(1000*60*60*24*365));
+		  var dark = 0;
 		  $("#results").html(Math.floor(age.toFixed(1)).toString());
 			$(".bod").click(function(){
-				$(".bod").fadeOut();
-				$(".bod").fadeIn();
+				//$(".bod").fadeOut();
+				//$(".bod").fadeIn();
+				if(dark==1){
+				   $(".bod").animate({opacity: 0.5}, 1000);
+				   dark = 0;
+				}else{
+				  $(".bod").animate({opacity: 1}, 1000);
+				  dark = 1;
+				}
 			});
 			var bg = 1;
 			$("section:nth-child(even)").click(function(){
