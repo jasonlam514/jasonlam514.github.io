@@ -68,9 +68,10 @@
           dark = 1;
         }
       });
-	  alert($('.bod').attr("class"));
-	  $('.bod').addClass('animated slideInLeft');
     });
+	$(window).on('load', function() {
+      $('.bod').addClass('animated slideInLeft');
+	});
   </script>
   <script>
   </script>
