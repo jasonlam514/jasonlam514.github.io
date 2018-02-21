@@ -76,20 +76,33 @@
   <script>
   </script>
   <script>
+    //var mobile = (/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent));
     $(document).ready(function() {
       if ($('.navbar-toggler').is(':visible') == true) {
         $('#navbar1').removeClass('desktop').addClass('mobile');
+		$('.grid-container').css({'grid-template-columns':'100% 100% 100%','overflow':'auto'});
       } else {
         $('#navbar1').removeClass('mobile').addClass('desktop');
+		$('.grid-container').css({'grid-template-columns':'40% 30% 30%','overflow':'visible'});
       }
+	  $(document).on("click", '.grid-item', function(){
+	  var x = $('.grid-container').scrollLeft();
+	  //$('.grid-container').scrollLeft(x+$(this).position().left-$('.grid-container').offset().left);
+		$('.grid-container').animate({
+			scrollLeft: x+$(this).position().left-$('.grid-container').offset().left
+		}, 500);
+	  });
     });
     $(window).resize(function() {
       if ($('.navbar-toggler').is(':visible') == true) {
         $('#navbar1').removeClass('desktop').addClass('mobile');
+		$('.grid-container').css({'grid-template-columns':'100% 100% 100%','overflow':'auto'});
       } else {
         $('#navbar1').removeClass('mobile').addClass('desktop');
+		$('.grid-container').css({'grid-template-columns':'40% 30% 30%','overflow':'visible'});
       }
     });
+	
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
