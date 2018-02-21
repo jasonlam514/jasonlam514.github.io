@@ -87,16 +87,18 @@
 		}, 500);
 	  });
     });
-    $(window).resize(function() {
+    /*$(window).resize(function() {
       mobile();
-    });
-	$(window).on("orientationchange", function(event) {
+    });*/
+	$(window).on("orientationchange resize", function(event) {
 	  mobile();
 	});
 	function mobile() {
 	  if ($('.navbar-toggler').is(':visible') == true) {
         $('#navbar1').removeClass('desktop').addClass('mobile');
-		$('.grid-container').css({'grid-template-columns':'100% 100% 100%','overflow':'auto'});
+		$('.grid-container').css({'grid-template-columns':'100% 100% 100%','overflow':'auto','height': '50vh','width':'90vw','max-height': '100%','max-width':'100%'});
+		$('.grid-item').css({'max-height': '100%','max-width':'100%'});
+		$('.grid-item img').css({'max-height': '100%','max-width':'100%'});
       } else {
         $('#navbar1').removeClass('mobile').addClass('desktop');
 		$('.grid-container').css({'grid-template-columns':'40% 30% 30%','overflow':'visible'});
