@@ -25,23 +25,27 @@
 	  </script>
 	  <script>
 		$(document).ready(function(){$(function() {
-		  $('.bod').addClass('animated slideInLeft');
+		  //$('.bod').addClass('animated slideInLeft');
 		  $('section').on('click', function(){ 
             if($('.navbar-toggler').attr('aria-expanded')=='true'){
               $('.navbar-toggler').trigger( "click" );
             }
           });
-		  /*if($('.navbar-toggler').is(':visible')==true && $('.navbar-collapse').is(':visible')==false){
-			$('li a:not(:active)').css('background-color','transparent');
+		  if($('.navbar-toggler').is(':visible')==true && $('.navbar-collapse').is(':visible')==false){
+		    $('#navbar1').removeClass('desktop').addClass('mobile');
 		  } else {
-			$('li a:not(:active)').css('background-color', 'rgba(255,255,255,0.3)');
-		  }*/
-		  /*if($('.navbar-toggler').is(':visible')==false && $('.navbar-collapse').is(':visible')==true){
-			$('li a').css('background-color', 'rgba(255,255,255,0.3)');
-		  } else {
-			$('li a:not(:active)').css('background-color','transparent');
-		  }*/
+		  	$('#navbar1').removeClass('mobile').addClass('desktop');
+		  }
         });
+		});
+	  </script>
+	  <script>
+		$(window).resize(function () {
+		  if($('.navbar-toggler').is(':visible')==true){
+		    $('#navbar1').removeClass('desktop').addClass('mobile');
+		  } else {
+		  	$('#navbar1').removeClass('mobile').addClass('desktop');
+		  }
 		});
 	  </script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
@@ -49,9 +53,11 @@
    </head>
    <body data-spy="scroll" data-target=".navbar-right">
       <div class="navbar-right navbar-dark navbar-expand-sm fixed-top nav1">
-         <a><img class="bod" src="https://graph.facebook.com/1618956224/picture?type=square"></a>
-		 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1">
-			<span class="navbar-toggler-icon"></span>
+         <a><img class="bod animated slideInLeft" src="https://graph.facebook.com/1618956224/picture?type=square"></a>
+		 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar1">
+			<span> </span>
+            <span> </span>
+            <span> </span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbar1">
 			<ul class="navbar-nav mr-auto">
