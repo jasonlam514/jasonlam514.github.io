@@ -22,9 +22,9 @@ $(document).ready(function() {
 			});
 			$(".popup").click(function () {
 				//document.getElementById('about').style.height = $('#video-view').offset()+300+$(window).height();
-				$("#video-view").css({"width":"600","max-width":"100vw","max-height":"70vh","margin":"0 auto"});
+				$("#video-view").css({"width":"600","max-width":"100vw","max-height":"100vh","margin":"10vh auto"});
 				var $this = $(this);
-				var $iframe = $("<iframe>").attr("src", $this.data("link")).css({"width":"100%","height": "40vh"});
+				var $iframe = $("<iframe>").attr("src", $this.data("link")).css({"width":"100%","height": "60vh"});
 				var $title = $("<h2>").text($this.data("title")).attr("class","pad");
 				//var $button = $("<button>").text("hide").attr("onclick","hide()");
 				$("#video-view").html($title).append($iframe);
