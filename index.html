@@ -4,13 +4,14 @@
 <head>
   <title>Jason Lam's page</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <link rel="shortcut icon" type="image/png" href="img/icon.png" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/swiper.min.css">
   <!--<script type="text/javascript"> 
     $(document).bind("mobileinit", function () {
         // jQuery Mobile's Ajax navigation does not work in all cases (e.g.,
@@ -32,6 +33,37 @@
       });
     });
     //}
+  </script>
+  	  <!-- Swiper JS -->
+	  <script src="js/swiper.min.js"></script>
+      <!-- Initialize Swiper -->
+  <script>
+    $(document).ready(function(){
+      var swiper = new Swiper('.swiper-container', {
+		loop: true,
+		effect: 'coverflow',
+		coverflowEffect: {
+          rotate: 30,
+          slideShadows: true,
+        },
+        watchSlidesProgress: true,
+        watchVisibility: true,
+        pagination: {
+          el: '.swiper-pagination',
+          dynamicBullets: true,
+		  clickable: true
+        },
+		slidesPerView: 'auto',
+		autoplay: {
+		  delay: 5000,
+		}, 
+ 		speed: 1500
+		/*watchSlidesVisibility: true,
+		preloadImages: false,
+        lazyLoading: true,
+		onLazyImageReady : function(swiper, slide, image){ alert('hi'); }*/
+      });
+    });
   </script>
   <script>
     $(document).ready(function() {
@@ -164,14 +196,21 @@
             <p class="lead">I am Jason, a computer science student from Hong Kong. Some of my previous projects are listed below:</p>
           </div>
         </div>
-        <div class="grid-container">
-          <div class="grid-item caption"><img class="caption__media" src="img/checker.png"></img>
+        <div class="swiper-container">
+		<div class="swiper-wrapper">
+          <div class="swiper-slide">
+			<div class="caption">
+			<img class="caption__media" src="img/checker.png">
             <div class="caption__overlay">
               <h3 class="caption__overlay__title">Bets checker</h3>
               <p class="caption__overlay__content">Gathering odds data from different bookies which guarantees you a profit. <a target="_blank" href="https://drive.google.com/open?id=1dwU-Um6cbANiWlm2IUbm_410xhu041DR">Link</a></p>
             </div>
+			</img>
+			</div>
           </div>
-          <div class="grid-item caption"><img class="caption__media" src="img/othello.png"></img>
+          <div class="swiper-slide">
+		  <div class="caption">
+		  <img class="caption__media" src="img/othello.png">
             <div class="caption__overlay">
               <h3 class="caption__overlay__title">Boardgame</h3>
               <p class="caption__overlay__content">
@@ -179,13 +218,19 @@
                 <a target="_blank" href="https://drive.google.com/file/d/0B93u1Q8ZWEwdV2VhTGRhRFQ2U3M/view">Link</a>
               </p>
             </div>
+			</img>
+			</div>
           </div>
-          <div class="grid-item caption"><img class="caption__media" src="img/memo.jpeg"></img>
+          <div class="swiper-slide">
+		  <div class="caption">
+		  <img class="caption__media" src="img/memo.jpeg">
             <div class="caption__overlay">
-              <h3 class="caption__overlay__title">Memo App for android</h3>
+              <h3 class="caption__overlay__title">Memo App for Android</h3>
               <p class="caption__overlay__content">It allows users to add memos and schedule notifications. <a target="_blank" href="				  https://drive.google.com/file/d/0B93u1Q8ZWEwdaS1kUFNUWVJ2OFU/view
 ">Link</a></p>
             </div>
+			</img>
+		  </div>
           </div>
           <!--<div class="grid-item"><img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/104.png"</img></div>
 				  <div class="grid-item"><img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/105.png"</img></div>
@@ -195,6 +240,8 @@
 			<iframe src="LamAllFeatures.mp4" width="497" height="298" seamless=""></iframe>
 			</div>-->
         </div>
+		<div class="swiper-pagination"></div>
+		</div>
       </div>
       <div id="video-view"></div>
     </section>
