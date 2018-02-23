@@ -124,9 +124,23 @@
     /*$(window).resize(function() {
       mobile();
     });*/
+	var cachedWidth = $(window).width();
 	$(window).on("resize", function(event) {
 	  mobile();
-	  hide();
+	  if ($("#video-view").is(':visible')) {
+		var newHeight = $(window).height() + $('#video-view').outerHeight() + $('.pad').outerHeight();
+		//el.style.height = newHeight + 'px';
+		$('#about').css('height',newHeight + 'px');
+		$.scrollify.update();
+		if((/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) )) {
+			$.scrollify.disable();
+		}
+		var newWidth = $(window).width();
+        if(newWidth !== cachedWidth){
+			$("html, body").animate({ scrollTop: $("#contact").offset().top-$(window).height()}, 800);
+			cachedWidth = newWidth;
+		}
+      }
 	  /*alert('h:'+$('.grid-container').css('height'));
 	  alert('item-h:'+$('.grid-item').css('height'));
 	  	  alert('pic-h:'+$('.grid-item img').css('height'));*/
