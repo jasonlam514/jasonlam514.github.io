@@ -42,7 +42,7 @@
     $(document).ready(function(){
       var swiper = new Swiper('.swiper-container', {
 		loop: true,
-		effect: 'cube',
+		effect: 'flip',
 		coverflowEffect: {
           rotate: 60,
           slideShadows: true,
@@ -53,6 +53,9 @@
         },
 		cubeEffect: {
           slideShadows: false,
+        },
+		fadeEffect: {
+          crossFade: true
         },
         watchSlidesProgress: true,
         watchVisibility: true,
@@ -65,7 +68,7 @@
 		autoplay: {
 		  delay: 5000,
 		}, 
- 		speed: 2500
+ 		speed: 1500
 		/*watchSlidesVisibility: true,
 		preloadImages: false,
         lazyLoading: true,
