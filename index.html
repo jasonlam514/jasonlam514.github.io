@@ -29,6 +29,7 @@
   <script>
     //if(!(/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) )) {
     $(function() {
+      $('footer').css('height',$('footer ul li').outerHeight());
       $.scrollify({
         section: "section",
         interstitialSection: "footer"
@@ -139,7 +140,6 @@
     });*/
 	var cachedWidth = $(window).width();
 	$(window).on("resize", function(event) {
-	  $('footer').css('height',$('footer ul li').outerHeight());
 	  mobile();
 	  if ($("#video-view").is(':visible')) {
 		var newHeight = $(window).height() + $('#video-view').outerHeight() + $('.pad').outerHeight();
