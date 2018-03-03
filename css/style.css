@@ -129,10 +129,13 @@ ul li a {
     color: white;
 }
 
+footer {
+    
+}
+
 footer ul {
 	list-style-type: none;
 	float: right;
-	max-height: 30px;
 }
 
 footer ul li a {
@@ -365,15 +368,13 @@ iframe {
     height: 0;
     overflow: hidden;*/
 }
-/*footer {
-	background-color: #19beff;
-}*/
 
 .swiper-container {
   height: 50vh;
   max-height: 50vh;
 }
 .swiper-wrapper {
+	  width: 100vw;
 }
 .swiper-slide {
 	position: relative;
