@@ -118,7 +118,7 @@
   <script>
     //var mobile = (/Android|webOS|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent));
     $(document).ready(function() {
-      $('footer').css('height',$('footer ul').outerHeight());
+      $('footer').css('height',$('footer ul li').outerHeight());
       mobile();
 	  /*alert('h:'+$('.grid-container').css('height'));
 	  alert('item-h:'+$('.grid-item').css('height'));
@@ -135,7 +135,7 @@
     });*/
 	var cachedWidth = $(window).width();
 	$(window).on("resize", function(event) {
-	  $('footer').css('height',$('footer ul').outerHeight());
+	  $('footer').css('height',$('footer ul li').outerHeight());
 	  mobile();
 	  if ($("#video-view").is(':visible')) {
 		var newHeight = $(window).height() + $('#video-view').outerHeight() + $('.pad').outerHeight();
